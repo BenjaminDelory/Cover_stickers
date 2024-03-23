@@ -28,7 +28,7 @@ for (i in cover){
 }
 
 #Plot cover stickers
-#Add a square on the bottom left of each panel to show an area that represents
+#Add a square at the bottom left of each panel to show an area that represents
 #X% of the total area
 
 grid_sample$cover <- paste(grid_sample$cover, "% cover", sep="")
