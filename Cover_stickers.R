@@ -3,7 +3,7 @@ library(tidyverse)
 # Create a data frame (a tibble) with one row for each
 # coordinate in your grid
 
-n.cells<-25 #Number of vertical and horizontal cells
+n.cells<-10 #Number of vertical and horizontal cells
 
 combos <- expand.grid(x = seq((1/n.cells)/2, 1-(1/n.cells)/2, length.out=n.cells), 
                       y = seq((1/n.cells)/2, 1-(1/n.cells)/2, length.out=n.cells)) %>%
@@ -51,7 +51,7 @@ ggplot(grid_sample,
        aes(x=x,
            y=y))+
   geom_point(shape=15,
-             size=2.05,
+             size=5.6,
              color=viridis::viridis(3)[2])+
   facet_wrap(~cover)+
   theme_minimal()+
@@ -62,7 +62,7 @@ ggplot(grid_sample,
                    yend=yend),
                inherit.aes = FALSE,
                color=viridis::viridis(3)[1],
-               size=1)+
+               linewidth=1)+
   geom_segment(data=data.frame(x=c(0,0,1,1),
                                y=c(0,1,1,0),
                                xend=c(0,1,1,0),
